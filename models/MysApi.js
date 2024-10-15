@@ -130,7 +130,8 @@ export default class MysApi {
 
   // 获取角色信息
   async getCharacter () {
-    return await this.getData('character')
+    const { list: avatars, ...data }await this.getData('character')
+    return { ...data, avatars}
   }
 
   // 获取角色详情
